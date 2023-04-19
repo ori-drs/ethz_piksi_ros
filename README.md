@@ -1,20 +1,16 @@
 # Use [piksi_multi_cpp](https://github.com/ethz-asl/ethz_piksi_ros/tree/master/piksi_multi_cpp) with ROS noetic and Piksi Multi Firmware 2.4.20
 Please use the new piksi_multi_cpp driver. The Python driver is not maintained and outdated. If you still want to use the Python driver checkout release [v1.10.0](https://github.com/ethz-asl/ethz_piksi_ros/tree/v1.11.0).
 
-ethz_piksi_ros (outdated)
-======
+Instructions
+------
 
-This repository contains (python) ROS drivers, tools, launch files, and wikis about how to use Piksi Real Time Kinematic (RTK) GPS device in ROS. There are two different driver versions: one for Piksi V2 and one for Piksi Multi. 
-
-**Check the [Wiki](https://github.com/ethz-asl/ethz_piksi_ros/wiki) for instructions on how to get started with Piksi RTK GPS receiver.**
-
-**The main advantage of these ROS drivers is supporting a two link communication for GPS corrections: Xbee and Wifi (see [Correction Over WiFi](TODO) for more info).**
-
-Example GPS RTK setup: the Base Station knows its position (after geodetic survey) and can send RTK corrections over Xbee and Wifi to the Rover, which can then compute its accurate position.
-![RTK setup](https://user-images.githubusercontent.com/15651057/33481271-0b1b97ca-d694-11e7-8650-d3c7d2e54f7d.jpg)
-
-Average time for Piksi Multi to get an RTK FIX (obtained with Piksi Multi Firmware 1.2.14 and lib sbp 2.2.15):
-![Piksi Multi Avg Fix Time](https://user-images.githubusercontent.com/15651057/33422109-c4559d8e-d5b4-11e7-91fc-ee0947c731d1.png)
+```
+- git clone git@github.com:ori-drs/ethz_piksi_ros.git
+- git clone git@github.com:ethz-asl/libserialport_catkin.git
+- git clone git@github.com:ethz-asl/libsbp_catkin.git
+- catkin build piksi_multi_cpp
+- roslaunch piksi_multi_cpp rover.launch  #if using the rover only
+```
 
 Overview
 ------
